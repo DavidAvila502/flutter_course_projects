@@ -9,7 +9,6 @@ class CounterFunctionsScreen extends StatefulWidget {
 
 class _CounterFunctionsScreenState extends State<CounterFunctionsScreen> {
   int clickCounter = 0;
-  String clicksText = 'Clicks';
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +21,6 @@ class _CounterFunctionsScreenState extends State<CounterFunctionsScreen> {
                 onPressed: () {
                   setState(() {
                     clickCounter = 0;
-                    clicksText = 'Clicks';
                   });
                 }),
           ],
@@ -30,6 +28,7 @@ class _CounterFunctionsScreenState extends State<CounterFunctionsScreen> {
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            // mainAxisSize: MainAxisSize.values[23],
             children: [
               Text(
                 '$clickCounter',
@@ -37,7 +36,7 @@ class _CounterFunctionsScreenState extends State<CounterFunctionsScreen> {
                     const TextStyle(fontSize: 160, fontWeight: FontWeight.w100),
               ),
               Text(
-                clicksText,
+                'Click${clickCounter == 1 ? '' : 's'}',
                 style: const TextStyle(fontSize: 25),
               )
             ],
@@ -51,7 +50,6 @@ class _CounterFunctionsScreenState extends State<CounterFunctionsScreen> {
               onPressed: () {
                 setState(() {
                   clickCounter = 0;
-                  clicksText = 'Clicks';
                 });
               },
             ),
@@ -77,7 +75,6 @@ class _CounterFunctionsScreenState extends State<CounterFunctionsScreen> {
               onPressed: () {
                 setState(() {
                   clickCounter++;
-                  clicksText = clickCounter == 1 ? 'Click' : 'Clicks';
                 });
               },
             ),
